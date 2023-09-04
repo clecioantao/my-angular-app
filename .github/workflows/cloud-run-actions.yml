@@ -41,7 +41,7 @@ jobs:
       # pulumi stack initialization
       - name: Initialize Pulumi Stack
         run: |
-          if ! pulumi stack select dev 2>/dev/null; then
+          if ! pulumi stack select dev --non-interactive 2>/dev/null; then
             pulumi stack init dev
           fi
         env:
