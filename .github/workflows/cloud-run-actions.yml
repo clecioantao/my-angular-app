@@ -10,7 +10,7 @@ jobs:
     
     defaults:
       run:
-        working-directory: gcp-ts-cloudrun
+        working-directory: ./gcp-ts-cloudrun
 
     steps:
       # checkout code
