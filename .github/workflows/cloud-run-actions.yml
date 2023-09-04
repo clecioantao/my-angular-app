@@ -51,6 +51,6 @@ jobs:
         uses:  pulumi/actions@v3
         with:
           command: up
-          stack-name: dev
+          stack-name: clecioantao/my-angular-app/gcp-ts-coudrun/dev
         env:
           PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_TOKEN }}
