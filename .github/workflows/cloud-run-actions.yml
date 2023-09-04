@@ -38,14 +38,14 @@ jobs:
       - name: "configure gcr.io"
         run: gcloud auth configure-docker gcr.io
 
-      # # pulumi stack initialization
-      # - name: Initialize Pulumi Stack
-      #   run: |
-      #     if ! pulumi stack select dev --non-interactive 2>/dev/null; then
-      #       pulumi stack init dev
-      #     fi
-      #   env:
-      #     PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_TOKEN }}
+      # pulumi stack initialization
+      - name: Initialize Pulumi Stack
+        run: |
+          if ! pulumi stack select dev --non-interactive 2>/dev/null; then
+            pulumi stack init dev
+          fi
+        env:
+          PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_TOKEN }}
 
       # # pulumi
       # - name: "exec pulumi"
