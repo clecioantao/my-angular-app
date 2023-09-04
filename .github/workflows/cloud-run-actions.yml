@@ -46,20 +46,11 @@ jobs:
           fi
         env:
           PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_TOKEN }}
-
-      # # pulumi
-      # - name: "exec pulumi"
-      #   run: |
-      #     curl -fsSL https://get.pulumi.com | sh
-      #     export PULUMI_ACCESS_TOKEN=${{secrets.PULUMI_TOKEN}}
-      #     pulumi login
-      #     pulumi destroy -s dev -y
-
       
       - name: "exec pulumi"
         uses:  pulumi/actions@v3
         with:
           command: up
-          stack-name: dev
+          stack-name: my-angular-app/gcp-ts-cloudrun/dev
         env:
           PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_TOKEN }}
